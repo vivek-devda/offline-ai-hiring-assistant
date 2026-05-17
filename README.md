@@ -154,7 +154,7 @@ offline-ai-hiring-assistant/
 
 ### Analysis Results
 
-![Analysis Results](screenshots/dashboard_result.png)
+![Analysis Results](screenshots/dashboard_results.png)
 
 ### Project Structure
 
