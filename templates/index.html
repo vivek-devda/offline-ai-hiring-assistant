@@ -1,0 +1,166 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline AI Hiring Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo-section">
+            <div class="logo-box">
+                ✨
+            </div>
+
+            <div>
+                <h1>AI Hiring Assistant</h1>
+                <p>Offline AI-Powered Candidate Analysis</p>
+            </div>
+        </div>
+
+        <div class="status-badge">
+            AI Ready
+        </div>
+
+    </header>
+
+    <!-- MAIN -->
+    <main class="container">
+
+        <section class="hero">
+
+            <h2>Analyze Candidate</h2>
+
+            <p>
+                Paste resume text and job description
+                to generate explainable AI-powered hiring insights.
+            </p>
+
+        </section>
+
+        <!-- FORM -->
+        <form method="POST">
+
+            <div class="input-grid">
+
+                <!-- RESUME -->
+                <div class="card">
+
+                    <label>
+                        Resume Text
+                    </label>
+
+                    <textarea
+                        name="resume"
+                        placeholder="Paste candidate resume here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <!-- JOB -->
+                <div class="card">
+
+                    <label>
+                        Job Description
+                    </label>
+
+                    <textarea
+                        name="job"
+                        placeholder="Paste job description here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <div class="button-container">
+
+                <button type="submit">
+                    ✨ Analyze Candidate
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- RESULTS -->
+        {% if result %}
+
+        <section class="results-section">
+
+            <h3>Analysis Results</h3>
+
+            <!-- SCORE -->
+            <div class="result-card">
+
+                <div class="score-header">
+
+                    <span>Match Score</span>
+
+                    <span class="score-value">
+                        {{ result.score }}%
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        style="width: {{ result.score }}%;"
+                    ></div>
+
+                </div>
+
+            </div>
+
+            <!-- MATCHED SKILLS -->
+            <div class="result-card">
+
+                <h4>Matched Skills</h4>
+
+                <p>
+                    {{ result.keywords }}
+                </p>
+
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="result-card">
+
+                <h4>Candidate Summary</h4>
+
+                <pre>{{ result.summary }}</pre>
+
+            </div>
+
+            <!-- OUTREACH -->
+            <div class="result-card">
+
+                <h4>Generated Outreach</h4>
+
+                <pre>{{ result.outreach }}</pre>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+    </main>
+
+</body>
+</html>

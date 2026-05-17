@@ -1,0 +1,14 @@
+{
+  "hello": "Hello! How can I help you?",
+  "hi": "Hi there!",
+  "how are you": "I am functioning properly.",
+  "what is your name": "I am a deterministic NLP assistant built with structured intent routing.",
+  "bye": "Goodbye!",
+  "help": "I can answer basic questions.",
+  "who created you": "I was created by Vivek.",
+  "document": "Searching document...",
+  "pdf": "Searching PDF...",
+  "job match": "Matching job and resume...",
+  "match job": "Matching job and resume...",
+  "job": "Processing job match..."
+}
