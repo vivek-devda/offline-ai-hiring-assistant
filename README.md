@@ -150,11 +150,11 @@ offline-ai-hiring-assistant/
 
 ### Dashboard Interface
 
-![Analysis Results](screenshots/chatbot_demo.png)
+![Dashboard](screenshots/dashboard_results.png)
 
 ### Analysis Results
 
-![Dashboard](screenshots/dashboard_results.png)
+![Analysis Results](screenshots/chatbot_demo.png)
 
 ### Project Structure
 
