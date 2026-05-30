@@ -239,7 +239,7 @@ offline-ai-hiring-assistant/
 
 
 
-![Dashboard](screenshots/chatbot_demo.png)
+![Analysis Results](screenshots/chatbot_demo.png)
 
 
 
@@ -247,7 +247,7 @@ offline-ai-hiring-assistant/
 
 
 
-![Analysis Results](screenshots/dashboard_results.png)
+![Dashboard](screenshots/dashboard_results.png)
 
 
 
