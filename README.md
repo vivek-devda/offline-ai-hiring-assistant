@@ -1,116 +1,211 @@
 # 🚀 Offline AI Hiring Assistant
 
-An offline AI chatbot designed for environments where **API access is limited, costly, or privacy-sensitive**.
+A privacy-first hiring assistant built using Python, Flask, SQLite, and lightweight NLP techniques.
+
+This project evaluates candidate-job alignment, generates recruiter-style outreach messages, performs explainable skill matching, and stores conversation history locally without relying on external AI APIs or cloud services.
 
 ---
 
-## 🚀 Overview
+# 📌 Overview
 
-A privacy-first offline AI hiring assistant designed to evaluate candidate-job alignment without relying on cloud APIs or external LLM services.
+The Offline AI Hiring Assistant is designed to demonstrate how practical hiring workflows can be built using deterministic NLP, fuzzy matching, and explainable scoring techniques.
 
-The system performs:
+All processing runs locally on the user's machine.
 
-- Resume-job matching
-- Skill extraction
-- Explainable candidate evaluation
-- Outreach generation
-- PDF-based local document processing
-- Persistent memory storage
+The system currently supports:
 
-All processing runs locally using lightweight NLP techniques and modular AI workflow architecture.
-
----
-
-## 🧠 Key AI Features
-
-## 🧠 Key AI Features
-
-This project combines lightweight NLP techniques,
-heuristic reasoning, and modular workflow architecture
-to simulate practical AI-assisted hiring analysis
-without relying on external LLM APIs.
-
-### Explainable Matching
-The system explains:
-- **matched skills**
-- **missing skills**
-- **candidate strengths**
-- **capability reasoning**
-
-instead of returning only a raw score.
-
-### Capability Inference
-The system performs lightweight heuristic reasoning to infer:
-- **broad technical exposure**
-- **advanced AI/ML specialization**
-- **overqualification detection**
-
-### Privacy-First Design
-All processing runs locally without:
-- **OpenAI APIs**
-- **external LLM services**
-- **cloud inference**
+* Resume and job description matching
+* Skill extraction and normalization
+* Candidate-job fit scoring
+* Candidate evaluation summaries
+* Recruiter outreach message generation
+* Local PDF document processing
+* Persistent memory storage using SQLite
+* Web-based interface using Flask
+* Command-line chatbot interface
 
 ---
 
-## 💡 Why This Project Matters
+# 🧠 Features
 
-Most modern AI hiring systems depend heavily on cloud APIs and external AI services, creating concerns around:
+## Resume-Job Matching
 
-- privacy
-- API costs
-- latency
-- internet dependency
-- lack of explainability
+The system compares resume content against job descriptions and generates a match score based on:
 
-This project demonstrates how practical AI workflows can be built locally using:
+* Skill overlap analysis
+* TF-IDF vectorization
+* Cosine similarity scoring
 
-- deterministic NLP
-- fuzzy matching
-- explainable scoring
-- modular architecture
-- offline processing
+Outputs include:
+
+* Match score
+* Matched skills
+* Candidate evaluation summary
 
 ---
 
-## ⚙️ Features
+## Skill Extraction Engine
 
-- Offline AI-powered candidate-job matching
-- Fuzzy NLP-based skill extraction
-- Alias-aware skill normalization
-- Explainable candidate evaluation summaries
-- Adaptive outreach message generation
-- Persistent SQLite memory system
-- PDF document text extraction
-- Flask-based web interface
-- Hybrid scoring using:
-  - TF-IDF similarity
-  - skill overlap analysis
-  - heuristic reasoning
-- Modular backend architecture
-- Zero API cost
+The NLP pipeline extracts technical skills from text using:
+
+* Rule-based skill recognition
+* Alias normalization
+* Fuzzy matching for typo handling
+
+Examples:
+
+* Python ↔ Py
+* Machine Learning ↔ ML
+* JavaScript ↔ JS
+* Artificial Intelligence ↔ AI
 
 ---
 
-## 🛠 Tech Stack
+## Explainable Candidate Evaluation
 
-- Python
-- Flask
-- SQLite
-- scikit-learn
-- fuzzywuzzy
-- pypdf
+Instead of returning only a score, the assistant generates human-readable analysis including:
 
-### NLP Techniques
-- Fuzzy matching
-- TF-IDF vectorization
-- Cosine similarity
-- Skill normalization
-- Heuristic reasoning
+* Alignment level
+* Matched skills
+* Missing skills
+* Candidate strengths
+* Capability observations
+
+Example insights:
+
+* Strong overall alignment with the role
+* Candidate may need improvement in specific skills
+* Candidate demonstrates broad technical exposure
+* Candidate shows strong AI/ML exposure
 
 ---
 
-## 📂 Project Structure
+## Recruiter Outreach Generation
+
+Automatically generates recruiter-style outreach messages based on:
+
+* Match score
+* Skill alignment
+* Candidate suitability
+
+This helps simulate a basic recruiting workflow.
+
+---
+
+## Persistent Memory System
+
+The chatbot stores previous interactions using SQLite.
+
+Capabilities:
+
+* Save user interactions
+* Retrieve recent conversations
+* Support memory recall queries
+
+Examples:
+
+* What did I ask?
+* What did I say earlier?
+* Previous question
+
+---
+
+## PDF Document Processing
+
+The system can extract text from local PDF documents for basic document search workflows.
+
+Supported functionality:
+
+* PDF text extraction
+* Keyword-based document lookup
+
+---
+
+## Intent Detection
+
+The chatbot uses fuzzy matching to identify user intent.
+
+Current supported intents include:
+
+* Greetings
+* Help requests
+* Document search
+* PDF search
+* Job matching
+
+---
+
+## Decision Routing
+
+A lightweight decision engine routes requests into different workflows:
+
+* Normal response
+* Clarification request
+* PDF search
+* Resume-job matching
+
+---
+
+## Web Interface
+
+A Flask web application provides a browser-based interface.
+
+Users can:
+
+1. Paste resume text
+2. Paste job description
+3. Run analysis
+4. View results
+
+Displayed outputs:
+
+* Match Score
+* Matched Skills
+* Candidate Summary
+* Outreach Message
+
+---
+
+## Command-Line Chatbot
+
+A terminal-based chatbot interface is also available.
+
+The chatbot supports:
+
+* Intent detection
+* Memory recall
+* PDF search
+* Resume-job matching workflows
+
+---
+
+# 🛠 Tech Stack
+
+## Backend
+
+* Python
+* Flask
+* SQLite
+
+## NLP & Data Processing
+
+* scikit-learn
+* fuzzywuzzy
+* python-Levenshtein
+* pypdf
+
+## Techniques Used
+
+* TF-IDF Vectorization
+* Cosine Similarity
+* Fuzzy Matching
+* Skill Normalization
+* Rule-Based Intent Detection
+* Heuristic Candidate Evaluation
+
+---
+
+# 📂 Project Structure
 
 ```text
 offline-ai-hiring-assistant/
@@ -121,105 +216,133 @@ offline-ai-hiring-assistant/
 ├── requirements.txt
 │
 ├── nlp/
-│   ├── __init__.py
 │   └── skills.py
 │
 ├── tools/
-│   ├── __init__.py
 │   ├── matching.py
 │   ├── outreach.py
 │   └── pdf_tools.py
 │
 ├── memory/
-│   ├── __init__.py
 │   └── database.py
 │
 ├── templates/
 │   └── index.html
 │
-├── static/
-│
-├── uploads/
-│
-└── screenshots/
+└── memory.db
 ```
-
----
-
 ## 📸 Screenshots
+
+
 
 ### Dashboard Interface
 
-![Dashboard](screenshots/dashboard_results.png)
+
+
+![Dashboard](screenshots/chatbot_demo.png)
+
+
 
 ### Analysis Results
 
-![Analysis Results](screenshots/chatbot_demo.png)
+
+
+![Analysis Results](screenshots/dashboard_results.png)
+
+
 
 ### Project Structure
 
+
+
 ![Folder Structure](screenshots/folder_structure.png)
 
-## ▶️ How To Run
+---
 
-### 1. Clone Repository
+# ▶️ Installation
+
+## Clone Repository
 
 ```bash
-git clone <your-repo-link>
+git clone <repository-url>
 cd offline-ai-hiring-assistant
 ```
 
-### 2. Create Virtual Environment
+## Create Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-### 3. Activate Virtual Environment
+## Activate Environment
 
-#### Windows PowerShell
+### Windows
 
 ```bash
 .venv\Scripts\activate
 ```
 
-### 4. Install Dependencies
+### Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Run Flask App
+---
+
+# ▶️ Run Web Application
 
 ```bash
 python app.py
 ```
 
----
+Open:
 
-## 🚀 Future Improvements
-
-Planned upgrades include:
-
-- Resume PDF upload support
-- Multi-candidate ranking system
-- Improved frontend styling
-- Semantic memory retrieval
-- Advanced role categorization
-- Lightweight local embedding support
-- Recruiter dashboard workflow
+```text
+http://127.0.0.1:5000
+```
 
 ---
 
-## 👨‍💻 Author
+# ▶️ Run Chatbot
 
-Vivek Devda  
+```bash
+python chatbot.py
+```
+
+---
+
+# 🚧 Current Limitations
+
+The current version does not yet include:
+
+* Resume PDF upload through the web interface
+* Multi-candidate ranking
+* Vector databases
+* Embeddings-based retrieval
+* LLM integration
+* Autonomous AI agents
+* Recruiter dashboard
+* Job recommendation engine
+
+---
+
+# 👨‍💻 Author
+
+**Vivek Devda**
+
 B.Tech Artificial Intelligence & Machine Learning Student
 
-Focused on:
-- offline AI systems
-- NLP workflows
-- modular AI architecture
-- privacy-first AI applications
+Interested in:
 
----
+* AI Systems
+* NLP Applications
+* Workflow Automation
+* Backend Development
+* Privacy-First AI Solutions
