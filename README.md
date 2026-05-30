@@ -243,7 +243,7 @@ offline-ai-hiring-assistant/
 
 
 
-### Analysis Results
+### Project Structure
 
 
 
@@ -251,7 +251,7 @@ offline-ai-hiring-assistant/
 
 
 
-### Project Structure
+### Analysis Results
 
 
 
