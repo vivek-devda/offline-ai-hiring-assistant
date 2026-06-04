@@ -26,6 +26,27 @@ The system currently supports:
 
 ---
 
+# 📸 Screenshots
+
+## Candidate Ranking Dashboard
+
+![Candidate Ranking Dashboard](screenshots/dashboard.png)
+
+## Analysis Results
+
+![Analysis Results](screenshots/analysis.png)
+
+## Resume Viewer
+
+![Resume Viewer](screenshots/resume-viewer.png)
+
+## Project Structure
+
+![Project Structure](screenshots/project-structure.png)
+
+---
+
+
 # 🧠 Features
 
 ## Resume-Job Matching
