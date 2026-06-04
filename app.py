@@ -86,7 +86,10 @@ def home():
                 "filepath": pdf_path
             })
             
-                
+            results.sort(
+                key=lambda x: x["score"],
+                reverse=True
+            )
             
             
 
