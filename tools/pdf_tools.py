@@ -1,6 +1,7 @@
 # -------------------------------
 # PDF TOOL
 # -------------------------------
+from pypdf import PdfReader
 def extract_pdf_text(path):
     reader = PdfReader(path)
     text = ""

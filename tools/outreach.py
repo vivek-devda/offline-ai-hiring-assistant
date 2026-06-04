@@ -92,8 +92,8 @@ def generate_summary(
     if missing_skills:
 
         summary_points.append(
-            "Candidate may need improvement in: "
-            + ", ".join(missing_skills)
+            "Missing Skills:\n• "
+            + "\n• ".join(missing_skills)
         )
 
     # capability inference

@@ -50,22 +50,22 @@
         </section>
 
         <!-- FORM -->
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
 
             <div class="input-grid">
 
                 <!-- RESUME -->
                 <div class="card">
 
-                    <label>
-                        Resume Text
-                    </label>
+                    <label>Resume PDF</label>
 
-                    <textarea
-                        name="resume"
-                        placeholder="Paste candidate resume here..."
-                        required
-                    ></textarea>
+                    <input
+                    type="file"
+                    name="resume_pdfs"
+                    accept=".pdf"
+                    multiple
+                    required
+                >
 
                 </div>
 
@@ -97,11 +97,63 @@
         </form>
 
         <!-- RESULTS -->
+        {% if results %}
+
+        <div class="result-card">
+
+            <h4>Candidate Rankings</h4>
+
+            {% for candidate in results %}
+
+                <div class="result-card candidate-card"
+                    style="cursor:pointer;"
+                    data-score="{{ candidate.score }}"
+                    data-keywords="{{ candidate.keywords }}"
+                    data-summary="{{ candidate.summary }}"
+                    data-outreach="{{ candidate.outreach }}"
+                    data-filename="{{ candidate.filename }}">
+
+                    <h4 class="candidate-name">
+
+                    {% if loop.index == 1 %}
+                    🥇
+                    {% elif loop.index == 2 %}
+                    🥈
+                    {% elif loop.index == 3 %}
+                    🥉
+                    {% endif %}
+
+                    #{{ loop.index }}
+                    {{ candidate.filename }}
+
+                    </h4>
+
+                    <p>Score: {{ candidate.score }}%</p> 
+
+                    <p>Skills: {{ candidate.keywords }}</p>
+                    <p>
+                        <a href="/resume/{{ candidate.filename }}"
+                        target="_blank">
+                            View Resume
+                        </a>
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+        
         {% if result %}
 
         <section class="results-section">
 
             <h3>Analysis Results</h3>
+            <p id="selected-candidate">
+                Selected Candidate: {{ results[0].filename }}
+            </p>
 
             <!-- SCORE -->
             <div class="result-card">
@@ -110,7 +162,10 @@
 
                     <span>Match Score</span>
 
-                    <span class="score-value">
+                    <span
+                        class="score-value"
+                        id="match-score"
+                    >
                         {{ result.score }}%
                     </span>
 
@@ -120,6 +175,7 @@
 
                     <div
                         class="progress-fill"
+                        id="progress-fill"
                         style="width: {{ result.score }}%;"
                     ></div>
 
@@ -132,7 +188,7 @@
 
                 <h4>Matched Skills</h4>
 
-                <p>
+                <p id="matched-skills">
                     {{ result.keywords }}
                 </p>
 
@@ -143,7 +199,9 @@
 
                 <h4>Candidate Summary</h4>
 
-                <pre>{{ result.summary }}</pre>
+                <pre id="candidate-summary">
+                    {{ result.summary }}
+                </pre>
 
             </div>
 
@@ -152,7 +210,9 @@
 
                 <h4>Generated Outreach</h4>
 
-                <pre>{{ result.outreach }}</pre>
+                <pre id="candidate-outreach">
+                    {{ result.outreach }}
+                </pre>
 
             </div>
 
@@ -161,6 +221,66 @@
         {% endif %}
 
     </main>
+
+<script>
+
+const candidates =
+document.querySelectorAll(".candidate-card");
+
+console.log("Cards found:", candidates.length);
+
+candidates.forEach(candidate => {
+
+    candidate.onclick = () => {
+
+        console.log("Card clicked");
+
+        const score =
+        candidate.dataset.score;
+        document.getElementById(
+            "match-score"
+        ).innerText =
+        score + "%";
+        document.getElementById(
+            "progress-fill"
+        ).style.width =
+        score + "%";
+
+        const keywords =
+        candidate.dataset.keywords;
+
+        document.getElementById(
+            "matched-skills"
+        ).innerText =
+        keywords;
+        const summary =
+        candidate.dataset.summary;
+
+        document.getElementById(
+            "candidate-summary"
+        ).innerText =
+        summary;
+        const outreach =
+        candidate.dataset.outreach;
+
+        document.getElementById(
+            "candidate-outreach"
+        ).innerText =
+        outreach;
+
+        const filename =
+        candidate.dataset.filename;
+
+        document.getElementById(
+            "selected-candidate"
+        ).innerText =
+        "Selected Candidate: " + filename;
+
+    };
+
+});
+
+</script>
 
 </body>
 </html>

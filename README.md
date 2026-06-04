@@ -231,33 +231,6 @@ offline-ai-hiring-assistant/
 │
 └── memory.db
 ```
-## 📸 Screenshots
-
-
-
-### Dashboard Interface
-
-
-
-![Dashboard](screenshots/dashboard_results.png)
-
-
-### Analysis Results
-
-
-
-![Analysis Results](screenshots/chatbot_demo.png)
-
-
-### Project Structure
-
-
-
-![Folder Structure](screenshots/folder_structure.png)
-
----
-
-# ▶️ Installation
 
 ## Clone Repository
 
