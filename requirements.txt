@@ -3,3 +3,4 @@ fuzzywuzzy
 python-Levenshtein
 pypdf
 scikit-learn
+gunicorn
