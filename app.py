@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, send_from_directory
 from tools.matching import match_job
 from tools.pdf_tools import extract_pdf_text
@@ -7,6 +8,15 @@ from tools.outreach import (
     generate_summary
 )
 app = Flask(__name__)
+UPLOAD_FOLDER = os.path.join(
+    os.path.dirname(__file__),
+    "uploads"
+)
+
+os.makedirs(
+    UPLOAD_FOLDER,
+    exist_ok=True
+)
 
 @app.route("/", methods=["GET", "POST"])
 
@@ -33,7 +43,10 @@ def home():
             print(file.filename)
         for pdf_file in pdf_files:
             print("Processing:", pdf_file.filename)
-            pdf_path = f"uploads/{pdf_file.filename}"
+            pdf_path = os.path.join(
+                UPLOAD_FOLDER,
+                pdf_file.filename
+            )
             pdf_file.save(pdf_path)
             resume_text = extract_pdf_text(pdf_path)
             print("Characters extracted:", len(resume_text))
@@ -106,7 +119,7 @@ def home():
 @app.route("/resume/<filename>")
 def view_resume(filename):
     return send_from_directory(
-        "uploads",
+        UPLOAD_FOLDER,
         filename
     )
 
