@@ -5,6 +5,9 @@ A privacy-first hiring assistant built using Python, Flask, SQLite, and lightwei
 This project evaluates candidate-job alignment, generates recruiter-style outreach messages, performs explainable skill matching, and stores conversation history locally without relying on external AI APIs or cloud services.
 
 ---
+## Live Demo
+
+https://offline-ai-hiring-assistant.onrender.com/
 
 # 📌 Overview
 
