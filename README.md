@@ -317,12 +317,12 @@ python chatbot.py
 
 The current version does not yet include:
 
-• Advanced recruiter dashboard and candidate management
-• Enhanced workflow management and analytics
-• Embeddings-based retrieval
-• Vector database integration
-• Job recommendation engine
-• Additional evaluation and benchmarking tools
+* Advanced recruiter dashboard and candidate management
+* Enhanced workflow management and analytics
+* Embeddings-based retrieval
+* Vector database integration
+* Job recommendation engine
+* Additional evaluation and benchmarking tools
 ---
 
 # 👨‍💻 Author
