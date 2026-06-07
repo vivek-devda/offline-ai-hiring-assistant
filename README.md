@@ -322,7 +322,6 @@ The current version does not yet include:
 * Embeddings-based retrieval
 * Advanced recruiter dashboard and workflow management
 * Job recommendation engine
-
 ---
 
 # 👨‍💻 Author
