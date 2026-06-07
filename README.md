@@ -321,8 +321,6 @@ The current version does not yet include:
 * Multi-candidate ranking
 * Vector databases
 * Embeddings-based retrieval
-* LLM integration
-* Autonomous AI agents
 * Recruiter dashboard
 * Job recommendation engine
 
