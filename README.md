@@ -313,7 +313,7 @@ python chatbot.py
 
 ---
 
-# 🚧 Current Limitations
+# 🚧 Planned Improvements
 
 The current version does not yet include:
 
