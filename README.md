@@ -317,11 +317,10 @@ python chatbot.py
 
 The current version does not yet include:
 
-* Resume PDF upload through the web interface
-* Multi-candidate ranking
+* Advanced recruiter dashboard and candidate management
 * Vector databases
 * Embeddings-based retrieval
-* Recruiter dashboard
+* Advanced recruiter dashboard and workflow management
 * Job recommendation engine
 
 ---
