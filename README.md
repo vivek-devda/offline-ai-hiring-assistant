@@ -1,7 +1,6 @@
 # 🚀 Offline AI Hiring Assistant
 
-An AI-powered candidate evaluation system that streamlines recruitment workflows through automated resume screening, candidate ranking, skill-gap analysis, multi-resume comparison, and recruiter outreach generation. Built as a deployed web application using Python, Flask, NLP, and Scikit-Learn, it helps recruiters evaluate candidates more efficiently while reducing repetitive manual tasks.
-
+An AI-powered candidate evaluation system that streamlines recruitment workflows through automated resume screening, candidate ranking, skill-gap analysis, multi-resume comparison, and recruiter outreach generation. Built as a deployed web application using Python, Flask, NLP, and Scikit-Learn, it demonstrates how practical hiring workflows can be automated using explainable NLP techniques, local document processing, and persistent memory systems.
 ---
 ## Live Demo
 
