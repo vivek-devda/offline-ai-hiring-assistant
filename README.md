@@ -1,8 +1,6 @@
 # 🚀 Offline AI Hiring Assistant
 
-A privacy-first hiring assistant built using Python, Flask, SQLite, and lightweight NLP techniques.
-
-This project evaluates candidate-job alignment, generates recruiter-style outreach messages, performs explainable skill matching, and stores conversation history locally without relying on external AI APIs or cloud services.
+AI-powered candidate evaluation system with resume screening, ranking, skill-gap analysis, and outreach generation.
 
 ---
 ## Live Demo
