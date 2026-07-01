@@ -8,7 +8,7 @@ https://offline-ai-hiring-assistant.onrender.com/
 
 # 📌 Overview
 
-The Offline AI Hiring Assistant is designed to demonstrate how practical hiring workflows can be built using deterministic NLP, fuzzy matching, and explainable scoring techniques.
+The AI-Powered Hiring Assistant is designed to demonstrate how practical hiring workflows can be built using deterministic NLP, fuzzy matching, and explainable scoring techniques.
 
 All processing runs locally on the user's machine.
 
